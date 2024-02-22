@@ -474,3 +474,4 @@ _[Ss]cripts
 *.dot[Cc]over
 
 .vs
+obj/*
