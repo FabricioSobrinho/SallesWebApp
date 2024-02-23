@@ -1,4 +1,13 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using SallesWebApp.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("SallesWebAppContext");
+builder.Services.AddDbContext<SallesWebAppContext>(options =>
+{
+    options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 36)));
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
