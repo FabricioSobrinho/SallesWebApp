@@ -14,6 +14,8 @@ namespace SallesWebApp.Data
         {
         }
 
-        public DbSet<SallesWebApp.Models.Department> Department { get; set; } = default!;
+        public DbSet<Department> Department { get; set; } = default!;
+        public DbSet<Seller> Seller { get; set; } = default!;
+        public DbSet<SallesRecord> SallesRecord { get; set; } = default!;
     }
 }
