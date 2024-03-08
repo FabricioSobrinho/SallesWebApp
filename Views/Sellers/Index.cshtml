@@ -1,6 +1,51 @@
-﻿@{
-	ViewData["Title"] = "Index";
+﻿@model IEnumerable<SallesWebApp.Models.Seller> 
+
+@{
+	ViewData["Title"] = "Sellers";
 }
 
-<h2>Sellers View</h2>
-<p>sanity test</p>
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+	<thead>
+		<tr class="success">
+			<th style="color: #F0F8FF;">
+				@Html.DisplayNameFor(model => model.Name)
+			</th>
+			<th style="color: #F0F8FF;">
+				@Html.DisplayNameFor(model => model.Email)
+			</th>
+			<th style="color: #F0F8FF;">
+				@Html.DisplayNameFor(model => model.BirthDate)
+			</th>
+			<th style="color: #F0F8FF;">
+				@Html.DisplayNameFor(model => model.BaseSalary)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td style="color: #F0F8FF;">
+					@Html.DisplayFor(modelItem => item.Name)
+				</td>
+				<td style ="color: #F0F8FF;">
+					@Html.DisplayFor(modelItem => item.Email)
+				</td style="color: #F0F8FF;">
+				<td style="color: #F0F8FF;">
+					@Html.DisplayFor(modelItem => item.BirthDate)
+				</td>
+				<td style="color: #F0F8FF;">
+					@Html.DisplayFor(modelItem => item.BaseSalary)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+					<a asp-action="Details" asp-route-id="@item.Id">Details</a>
+					<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
