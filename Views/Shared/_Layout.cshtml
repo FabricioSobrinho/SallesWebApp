@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-darkly.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SallesWebApp.styles.css" asp-append-version="true" />
+    <style>
+        .navbar-custom-text {
+            color: #F0F8FF !important;
+        }
+        .custom-text {
+            color: #F0F8FF !important;
+        }
+    </style>
 </head>
-<body>
+<body class="custom-text">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3" data-bs-theme="dark">
             <div class="container-fluid">
@@ -20,10 +28,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link navbar-custom-text" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link navbar-custom-text" asp-area="" asp-controller="Sellers" asp-action="Index">Sellers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbar-custom-text" asp-area="" asp-controller="Departments" asp-action="Index">Departments</a>
+                        </li>
+                        <li class="nav-item">
+							<a class="nav-link navbar-custom-text" asp-area="" asp-controller="SallesRecord" asp-action="Privacy">Salles Records</a>
                         </li>
                     </ul>
                 </div>
