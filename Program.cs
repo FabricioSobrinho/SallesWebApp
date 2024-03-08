@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SallesWebApp.Data;
+using SallesWebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("SallesWebAppContext");
@@ -11,6 +12,7 @@ builder.Services.AddDbContext<SallesWebAppContext>(options =>
 
 // Adicione o serviço SeedingService
 builder.Services.AddTransient<SeedingService>();
+builder.Services.AddTransient<SellerService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
