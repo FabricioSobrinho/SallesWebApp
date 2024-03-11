@@ -13,6 +13,7 @@ builder.Services.AddDbContext<SallesWebAppContext>(options =>
 // Adicione o serviço SeedingService
 builder.Services.AddTransient<SeedingService>();
 builder.Services.AddTransient<SellerService>();
+builder.Services.AddTransient<DepartmentService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
